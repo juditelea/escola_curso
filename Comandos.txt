@@ -1,0 +1,15 @@
+composer create-project --prefer-dist laravel/laravel escola_curso
+php artisan make:migration create_table_cursos --create=cursos
+php artisan make:migration create_table_alunos --create=alunos
+php artisan make:migration create_table_alunos_cursos --create=alunos_cursos
+## Alterar os arquivos criados acima para colocar os campos e as chaves estrangeiras
+## Alterar o arquivo .env para colocar o nomeda Base de dados e a senha de root
+php artisan migrate
+php artisan make:controller CursosController --resource
+php artisan make:controller AlunosController --resource
+## Alterar o arquivo web.php para colocar as rotas criadas
+php artisan make:model Curso
+php artisan make:model Aluno
+## Alterar os arquivos do Model; Alterar os controllers e criar os arquivos blade
+## Rodar no servidor
+php artisan serve
